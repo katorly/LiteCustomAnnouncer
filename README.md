@@ -1,0 +1,2 @@
+# litecustomannouncer
+LiteCustomAnnouncer插件开源
