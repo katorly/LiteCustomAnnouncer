@@ -1,0 +1,37 @@
+#---------------------
+#\LiteCustomAnnouncer/
+#---------------------
+#messages.yml
+#插件作者:主世界
+#本插件已免费发布并在Gitee上开源
+
+#设置插件消息前缀
+plugin-prefix: '&8&l[&b&lLiteCustomAnnouncer&8&l] &r'
+
+#输入指令时自变量个数错误
+args-incorrect: '&7自变量个数有误!请检查您输入的指令!'
+#开关公告推送功能成功
+set-switch-success: '&7您成功地开关了公告推送功能!'
+#新增公告成功(可用变量: <公告文字>)
+set-add-success: '&7您成功添加了 <公告文字> 到公告列表中!'
+#删除指定公告成功(可用变量: <公告文字>)
+set-remove-success: '&7您成功在公告列表中删除了 <公告文字> !'
+#新增定时公告成功(可用变量: <公告文字>)
+tset-add-success: '&7您成功添加了 <公告文字> 到定时公告列表中!'
+#删除指定定时公告成功(可用变量: <公告文字>)
+tset-remove-success: '&7您成功在定时公告列表中删除了 <公告文字> !'
+#重载插件配置成功
+reload-success: '&7插件配置重载成功!'
+#插件帮助消息
+help-message:
+  - '---------&8&l[&b&lLiteCustomAnnouncer&8&l]&7&l插件帮助---------'
+  - '&7指令前缀 /litecustomannouncer 可简写为 /litecannouncer 或 /lcar'
+  - '&7&l/lcar switch &r&7开关公告推送'
+  - '&7&l/lcar send <公告文字> &r&7用指令直接发送公告'
+  - '&7&l/lcar add <公告文字> &r&7新增公告'
+  - '&7&l/lcar remove <公告文字> &r&7删除指定公告'
+  - '&7&l/lcar tadd <公告文字> &r&7新增定时公告'
+  - '&7&l/lcar tremove <公告文字> &r&7删除指定定时公告'
+  - '&7&l/lcar reload &r&7重载插件配置'
+  - '&7&l/lcar help &r&7查看插件帮助'
+  - '---------&8&l[&b&lLiteCustomAnnouncer&8&l]&7&l插件帮助---------'

@@ -1,0 +1,12 @@
+name: LiteCustomAnnouncer
+version: 1.3
+main: com.gmail.zhushijie.litecustomannouncer.LiteCustomAnnouncer
+authors: [Zhushijie]
+description: A light plugin which can easily broadcast your messages to everyone.
+commands:
+  litecustomannouncer:
+    description: Use /lcar help instead of /help LiteCustomAnnouncer!
+    usage: /lcar help
+    aliases: [litecannouncer,lcar]
+    permission: litecustomannouncer.use
+    permission-message: You don't have permission to perform this command.

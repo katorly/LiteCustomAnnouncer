@@ -1,0 +1,31 @@
+#---------------------
+#\LiteCustomAnnouncer/
+#---------------------
+#config.yml
+#插件作者:主世界
+#本插件已免费发布并在Gitee上开源
+
+
+#----------
+#|Settings|
+#----------
+
+#是否启用公告推送
+enable-plugin: 'true'
+
+#多久自动推送一条公告,以秒为单位
+#修改此处后须重启服务器才可生效
+announce-cooldown: 10
+
+#推送形式
+#全服聊天栏公告
+announce-message: 'true'
+#全服title公告,需要设置显示时间
+#(用title展示时为了美观,公告消息前缀中的空格会被自动删除)
+announce-title: 'true'
+title-time: 2
+#全服bossbar公告,需设置bossbar颜色和显示时间
+#颜色只能设置"BLUE|GREEN|PINK|PURPLE|RED|WHITE|YELLOW"且必须大写
+announce-bossbar: 'true'
+bossbar-color: 'BLUE'
+bossbar-time: 3
