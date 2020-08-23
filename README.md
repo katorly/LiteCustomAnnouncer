@@ -1,5 +1,6 @@
 # LiteCustomAnnouncer
 LiteCustomAnnouncer插件开源
+
 [![](https://img.shields.io/badge/license-CC--BY--NC--ND--4.0-green)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ### 要查看LiteCustom系列其它的插件开源，请进入[我的github。](https://github.com/main-world)
