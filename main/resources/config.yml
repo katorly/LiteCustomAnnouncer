@@ -3,7 +3,7 @@
 #---------------------
 #config.yml
 #插件作者:主世界
-#本插件已免费发布并在Gitee上开源
+#本插件已免费发布并在Github上开源
 
 
 #----------
@@ -29,3 +29,7 @@ title-time: 2
 announce-bossbar: 'true'
 bossbar-color: 'BLUE'
 bossbar-time: 3
+
+#推送顺序
+#设为orderly则为公告列表循环从前到后推送,设为random则为公告列表随机推送
+announcement-order: 'random'

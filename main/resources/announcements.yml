@@ -3,7 +3,7 @@
 #---------------------
 #announcements.yml
 #插件作者:主世界
-#本插件已免费发布并在Gitee上开源
+#本插件已免费发布并在Github上开源
 
 #设置公告消息前缀
 announcement-prefix: '&8&l[&b&l公告&8&l] &r'

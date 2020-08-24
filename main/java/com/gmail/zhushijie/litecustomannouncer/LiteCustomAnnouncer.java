@@ -16,6 +16,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public class LiteCustomAnnouncer extends JavaPlugin {
     public static LiteCustomAnnouncer INSTANCE;
@@ -36,7 +37,12 @@ public class LiteCustomAnnouncer extends JavaPlugin {
                 int length = announcements.size();
                 if (Objects.equals(config.getString("enable-plugin"), "true")) {
                     String prefix = aconfig.getString("announcement-prefix").replace("&","§");
-                    String announcement = announcements.get(i).replace("&","§");
+                    String announcement;
+                    if (Objects.equals(config.getString("announcement-order"), "random")) {
+                        announcement = announcements.get(i).replace("&","§");
+                    } else {
+                        announcement = announcements.get((new Random()).nextInt(announcements.size())).replace("&","§");
+                    }
                     if (Objects.equals(config.getString("announce-message"), "true")) {
                         for (Player player : Bukkit.getOnlinePlayers()) {
                             player.sendMessage(prefix + announcement);
@@ -108,6 +114,11 @@ public class LiteCustomAnnouncer extends JavaPlugin {
                                     }.runTaskTimer(LiteCustomAnnouncer.INSTANCE, config.getInt("bossbar-time") * 20, 20L);
                                 }
                             }
+                            if (Objects.equals(s[2], "1")) {
+                                timing_announcements.remove(timing_announcement);
+                                tconfig.set("announcements-timing",timing_announcements);
+                                TimingAnnounceconfig.saveConfig();
+                            }
                         }
                     }
                 }
@@ -116,10 +127,10 @@ public class LiteCustomAnnouncer extends JavaPlugin {
     }
 
     public void pluginupdater() {
-        String currentversion = "1.3";
+        String currentversion = this.getDescription().getVersion();
         getLogger().info("正在检查更新......");
         try {
-            URL url = new URL("https://cdn.jsdelivr.net/gh/main-world/litecustom@update/LiteCustomAnnouncer/version.txt");
+            URL url = new URL("https://raw.githubusercontent.com/main-world/LiteCustom/master/LiteCustomAnnouncer.txt");
             InputStream is = url.openStream();
             InputStreamReader ir = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(ir);
@@ -131,7 +142,21 @@ public class LiteCustomAnnouncer extends JavaPlugin {
                 getLogger().info("请前往相应网页下载更新!");
             }
         } catch (Throwable t) {
-            getLogger().info("更新检查失败!");
+            try {
+                URL url = new URL("https://cdn.jsdelivr.net/gh/main-world/LiteCustom@update/Announcer.txt");
+                InputStream is = url.openStream();
+                InputStreamReader ir = new InputStreamReader(is);
+                BufferedReader br = new BufferedReader(ir);
+                String version = br.readLine();
+                if (version.equals(currentversion)) {
+                    getLogger().info("插件已是最新版本!");
+                } else {
+                    getLogger().info("检查到插件有新版本!");
+                    getLogger().info("请前往相应网页下载更新!");
+                }
+            } catch (Throwable e) {
+                getLogger().info("更新检查失败!");
+            }
         }
     }
 
@@ -154,7 +179,7 @@ public class LiteCustomAnnouncer extends JavaPlugin {
         Messagesconfig.reloadConfig();
         getLogger().info("LiteCustomAnnouncer已成功加载!");
         getLogger().info("作者:主世界");
-        getLogger().info("本插件已免费发布并在Gitee上开源");
+        getLogger().info("本插件已免费发布并在Github上开源");
         pluginupdater();
         LiteCustomAnnouncer.INSTANCE.getCommand("LiteCustomAnnouncer").setExecutor(new CommandHandler());
         announce();
