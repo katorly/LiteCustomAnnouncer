@@ -180,7 +180,7 @@ public class LiteCustomAnnouncer extends JavaPlugin {
         getLogger().info("LiteCustomAnnouncer已成功加载!");
         getLogger().info("作者:主世界");
         getLogger().info("本插件已免费发布并在Github上开源");
-        pluginupdater();
+        new Thread(() -> this.pluginupdater()).start();
         LiteCustomAnnouncer.INSTANCE.getCommand("LiteCustomAnnouncer").setExecutor(new CommandHandler());
         announce();
         announce_timing();
