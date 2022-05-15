@@ -130,7 +130,7 @@ public class LiteCustomAnnouncer extends JavaPlugin {
         String currentversion = this.getDescription().getVersion();
         getLogger().info("正在检查更新......");
         try {
-            URL url = new URL("https://raw.githubusercontent.com/main-world/LiteCustom/master/LiteCustomAnnouncer.txt");
+            URL url = new URL("https://raw.githubusercontent.com/katorly/LiteCustomAnnouncer/master/version.txt");
             InputStream is = url.openStream();
             InputStreamReader ir = new InputStreamReader(is);
             BufferedReader br = new BufferedReader(ir);
@@ -143,7 +143,7 @@ public class LiteCustomAnnouncer extends JavaPlugin {
             }
         } catch (Throwable t) {
             try {
-                URL url = new URL("https://cdn.jsdelivr.net/gh/main-world/LiteCustom@update/Announcer.txt");
+                URL url = new URL("https://cdn.jsdelivr.net/gh/katorly/LiteCustomAnnouncer/version.txt");
                 InputStream is = url.openStream();
                 InputStreamReader ir = new InputStreamReader(is);
                 BufferedReader br = new BufferedReader(ir);
@@ -180,7 +180,7 @@ public class LiteCustomAnnouncer extends JavaPlugin {
         getLogger().info("LiteCustomAnnouncer已成功加载!");
         getLogger().info("作者:主世界");
         getLogger().info("本插件已免费发布并在Github上开源");
-        pluginupdater();
+        new Thread(() -> this.pluginupdater()).start();
         LiteCustomAnnouncer.INSTANCE.getCommand("LiteCustomAnnouncer").setExecutor(new CommandHandler());
         announce();
         announce_timing();
