@@ -1,5 +1,5 @@
 name: LiteCustomAnnouncer
-version: 1.4
+version: 1.5
 main: com.gmail.zhushijie.litecustomannouncer.LiteCustomAnnouncer
 authors: [Zhushijie]
 description: A light plugin which can easily broadcast your messages to everyone.
